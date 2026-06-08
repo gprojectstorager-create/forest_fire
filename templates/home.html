@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire FWI Prediction</title>
+</head>
+<body>
+
+
+<h1>Algerian Forest Fire FWI Prediction</h1>
+
+<form action="{{ url_for('predict_datapoint') }}" method="POST">
+
+    <label>Temperature</label><br>
+    <input type="number" step="any" name="Temperature" required><br><br>
+
+    <label>RH</label><br>
+    <input type="number" step="any" name="RH" required><br><br>
+
+    <label>Ws</label><br>
+    <input type="number" step="any" name="Ws" required><br><br>
+
+    <label>Rain</label><br>
+    <input type="number" step="any" name="Rain" required><br><br>
+
+    <label>FFMC</label><br>
+    <input type="number" step="any" name="FFMC" required><br><br>
+
+    <label>DMC</label><br>
+    <input type="number" step="any" name="DMC" required><br><br>
+
+    <label>ISI</label><br>
+    <input type="number" step="any" name="ISI" required><br><br>
+
+    <label>Classes</label><br>
+    <input type="number" step="any" name="Classes" required><br><br>
+
+    <label>Region</label><br>
+    <input type="number" step="any" name="Region" required><br><br>
+
+    <button type="submit">Predict FWI</button>
+
+</form>
+
+<br>
+
+{% if results %}
+    <h2>FWI Prediction: {{ results }}</h2>
+{% endif %}
+
+
+</body>
+</html>
